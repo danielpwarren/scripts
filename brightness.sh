@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "  $(xbacklight -get | sed 's/\..*/% /')"
+echo " $(xbacklight -get | sed 's/\..*/%/')"

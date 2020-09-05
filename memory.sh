@@ -1,3 +1,3 @@
 #/bin/sh
 
-echo "  $(free -h | awk '/^Mem/ { print $3" / 8G" }' | sed s/i//g) "
+echo " $(free -h | awk '/^Mem/ { print $3" / 32G" }' | sed s/i//g)"

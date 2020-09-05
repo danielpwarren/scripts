@@ -18,4 +18,4 @@ else
 	msg=" $BATTERY"
 fi
 
-echo " $msg% "
+echo "$msg%"

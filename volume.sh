@@ -1,14 +1,14 @@
 #/bin/sh
 
-level=$(amixer -D pulse get Master | awk '$2== "Left:" {print $5}' | sed 's/[][]//g')
-muted=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n 1)
+level=$(amixer sget Master | awk '$1== "Mono:" {print $4}' | sed 's/[][]//g')
+muted=$(amixer sget Master | awk '$1== "Mono:" {print $6}' | sed 's/[][]//g')
 
-if [ $muted = "yes" ]
+if [ $muted = "on" ]
 then
-	echo "  $level "
-elif [ $muted = "no" ]
+	echo " $level"
+elif [ $muted = "off" ]
 then
-	echo "  $level "
+	echo " $level"
 else
-	echo " err "
+	echo "err"
 fi
